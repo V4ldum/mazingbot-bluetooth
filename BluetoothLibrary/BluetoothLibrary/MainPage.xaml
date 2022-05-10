@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BluetoothLibrary"
+             x:Class="BluetoothLibrary.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Enable Bluetooth" x:Name="BluetoothButton" Clicked="ButtonBluetooth_Clicked" />
+            <Label x:Name="LabelBluetooth" Text="No Bluetooth on this device !" IsVisible="False" TextColor="Red" HorizontalOptions="Center" />
+            <Button Text="Start scanning" x:Name="ScanningButton" Clicked="ScanningButton_Clicked" />
+
+            <ListView x:Name="listViewBluetooth" HorizontalOptions="Center" ItemSelected="ListViewBluetooth_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button x:Name="Disconnect" Text="Disconnect" Clicked="Disconnect_Clicked" />
+
+            <Entry x:Name="EntryBluetooth" Text="" Placeholder="Type me !" />
+            <Button x:Name="SendButton" Text="Send message" Clicked="SendButton_Clicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
